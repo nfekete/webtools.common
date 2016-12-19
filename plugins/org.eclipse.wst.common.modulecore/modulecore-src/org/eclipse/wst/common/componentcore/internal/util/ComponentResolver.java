@@ -205,7 +205,7 @@ public class ComponentResolver implements URIResolverExtension {
 				if (virtualFile.getWorkspaceRelativePath().segmentCount() > 1) {
 					resolvedFile = virtualFile.getUnderlyingFile();
 				}
-				if (resolvedFile != null && resolvedFile.getLocation() != null) {
+				if (resolvedFile != null && resolvedFile.exists() && resolvedFile.getLocation() != null) {
 					if (prependFilePrefix) {
 						resolvedPath = FILE_PROTOCOL + resolvedFile.getLocation().toString();
 					}
